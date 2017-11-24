@@ -1,4 +1,4 @@
-vendor/
+# vendor/
 node_modules/
 npm-debug.log
 
@@ -9,7 +9,8 @@ app/storage/
 # Laravel 5 & Lumen specific
 public/storage
 public/hot
-storage/*.key
+storage/
+
 .env.*.php
 .env.php
 .env
@@ -18,3 +19,5 @@ Homestead.json
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
+
+.idea/
