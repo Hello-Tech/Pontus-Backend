@@ -14,7 +14,7 @@
     </div>
 
     <div style="padding: 10px;">
-        <table class="table backendtable">
+        <table class="table backendtable" style="background-color: #fff;">
             <tbody>
             <thread>
                 <td>ID</td>

@@ -1,2 +1,11 @@
-# Pontus-Backend
-{PONTUS}的后台
+# PONTUS后台管理系统
+
+PONTUS是一套开源的IM软件,包括服务端,管理后台,Web端,Android端,iOS端等一系列软件,这里是管理后台部分。
+
+## 技术结构
+
+管理后台是一个基于Laravel框架编写的后台管理系统。直接连接存储库(暂定为MySQL数据库)。
+
+## 部署
+
+像部署任何Laravel网站一样部署即可,唯一的条件是能够直连MySQL数据库。
