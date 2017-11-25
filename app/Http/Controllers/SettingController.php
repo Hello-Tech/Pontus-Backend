@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers\backend;
+<?php namespace App\Http\Controllers;
 /**
  * Created by PhpStorm.
  * User: shishengyi
@@ -9,7 +9,7 @@
 use App\Model\System;
 use App\Http\Controllers\Controller;
 
-class SystemSettingController extends Controller{
+class SettingController extends Controller{
 
     /**
      * Create a new controller instance.
@@ -23,7 +23,7 @@ class SystemSettingController extends Controller{
 
     public function index(){
         $settings = \DB::table('systems')->paginate(15);
-        return view("backend.setting.index")->with("settings",$settings);
+        return view("setting.index")->with("settings",$settings);
     }
 
     public function edit($id){
@@ -31,7 +31,7 @@ class SystemSettingController extends Controller{
         if($setting == null){
             $this->notFound();
         }
-        return view('backend.setting.edit')->with("setting",$setting);
+        return view('setting.edit')->with("setting",$setting);
     }
 
     public function update($id){
@@ -45,10 +45,10 @@ class SystemSettingController extends Controller{
         );
 
         if (System::where('id', $id)->update($data)) {
-            return redirect("/backend/setting");
+            return redirect("/setting");
         }else{
             $setting->system_value = $val;
-            return view('backend.setting.edit')->with("setting",$setting);
+            return view('setting.edit')->with("setting",$setting);
         }
     }
 }

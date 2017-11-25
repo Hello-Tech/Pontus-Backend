@@ -70,9 +70,7 @@
 
         @yield('content')
 
-        <div style="border-top: 1px solid #ccc;text-align: center">
-            {{ beian() }}
-        </div>
+
 
         <script src="{{ globalAsset("/bootstrap/js/jquery.min_v1_11_3.js") }}"></script>
         <script src="{{ globalAsset("/bootstrap/js/bootstrap.min.js")  }}"></script>

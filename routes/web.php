@@ -11,22 +11,13 @@
 |
 */
 
-Route::get('/', 'IndexController@index');
-Route::get('/about', 'AboutController@index');
-
 Auth::routes();
 
-Route::group(['prefix'=>'backend','middleware'=>'auth'],function(){
+Route::group(['middleware'=>'auth'],function(){
 
-    Route::any('/','backend\BackendController@index');
-    Route::get('/index','backend\BackendController@index');
+    Route::any('/', 'IndexController@index');
+    Route::get('/index','IndexController@index');
 
-    Route::resource('tag','backend\TagController');
-    Route::resource('user','backend\UserController');
-    Route::resource('article','backend\ArticleController');
-    Route::resource('category','backend\CategoryController');
-
-    Route::resource('category','backend\CategoryController');
-
-    Route::resource('setting','backend\SystemSettingController');
+    Route::resource('user','UserController');
+    Route::resource('setting','SettingController');
 });

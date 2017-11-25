@@ -4,7 +4,7 @@
     <div class="page-heading">
         <h3>用户管理</h3>
         <ul class="breadcrumb">
-            <li><a href="/backend/index">后台首页</a></li>
+            <li><a href="/index">后台首页</a></li>
             <li class="active">用户管理</li>
         </ul>
     </div>

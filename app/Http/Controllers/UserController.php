@@ -1,7 +1,7 @@
-<?php namespace App\Http\Controllers\backend;
+<?php namespace App\Http\Controllers;
 /**
  * Created by PhpStorm.
- * User: shishengyi
+ * User: Aaron
  * Date: 2017/11/22
  * Time: 上午11:37
  */
@@ -23,11 +23,11 @@ class UserController extends Controller{
 
     public function index(){
         $users = \DB::table('users')->paginate(15);
-        return view("backend.user.index")->with("users",$users);
+        return view("user.index")->with("users",$users);
     }
 
     public function create(){
-        return view('backend.user.create');
+        return view('user.create');
     }
 
     public function store()
@@ -42,12 +42,12 @@ class UserController extends Controller{
         );
 
         if (User::create($data)) {
-            return redirect('/backend/user');
+            return redirect('/user');
         }
     }
 
     public function destroy($id){
         Tag::destroy([$id]);
-        return redirect('/backend/user');
+        return redirect('/user');
     }
 }

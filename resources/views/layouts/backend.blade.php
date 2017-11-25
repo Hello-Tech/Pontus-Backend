@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/images/fav.ico"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -21,21 +21,21 @@
         ]) !!};
     </script>
 
-    <link href="/backend/css/style.css?v=1.0.1025" rel="stylesheet">
-    <link href="/backend/css/style-responsive.css" rel="stylesheet">
-    <script type="text/javascript" src="{{ asset('/backend/plugin/jquery-1.9.1.js') }}"></script>
+    <link href="/css/style.css?v=1.0.1025" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet">
+    <script type="text/javascript" src="{{ asset('/plugin/jquery-1.9.1.js') }}"></script>
 
 </head>
 <?php
 function smartGroupActive($controller){
-    $controller = "App\\Http\\Controllers\\backend\\" . $controller;
+    $controller = "App\\Http\\Controllers\\" . $controller;
     if(strcmp(currentController(),$controller) == 0){
         echo "nav-active";
     }
 }
 
 function smartNavigateActive($controller,$action){
-    $controller = "App\\Http\\Controllers\\backend\\" . $controller;
+    $controller = "App\\Http\\Controllers\\" . $controller;
     if(strlen($action) > 0){
         if(strcmp(currentAction(),$action) == 0 && strcmp(currentController(),$controller) == 0){
             echo "active";
@@ -53,25 +53,14 @@ function smartNavigateActive($controller,$action){
     <!-- left side start-->
     <div class="left-side sticky-left-side">
         <!--logo and iconic logo start-->
-        <div class="logo" style="padding-bottom:10px;padding-top:10px;height: 60px;">
-            <a href="/"><img src="/backend/images/logo.png" alt="" width="200px"></a>
+        <div class="logo" style="padding-bottom:10px;padding-top:10px;height: 60px;text-align: center;border-bottom: 1px solid #888;">
+            <p style="color: #fff;font-size: 30px;line-height: 50px;">PONTUS</p>
         </div>
         <div class="left-side-inner">
             <ul class="nav nav-pills nav-stacked custom-nav" style="margin-top: 0px;padding-top: 0px;">
-                <li class="<?php smartNavigateActive("BackendController","") ?>"><a href="/backend/index"><i class="fa fa-home"></i> <span>系统概况</span></a></li>
-                <li class="<?php smartNavigateActive("UserController","") ?>"><a href="/backend/user"><i class="fa fa-user"></i> <span>用户管理</span></a></li>
-                <li class="menu-list <?php smartGroupActive("ArticleController") ?> <?php smartNavigateActive("CategoryController","") ?> <?php smartNavigateActive("TagController","") ?>"><a href=""><i class="fa fa-laptop"></i><span>内容管理</span></a>
-                    <ul class="sub-menu-list">
-                        <li class="<?php smartNavigateActive("ArticleController","") ?>"><a href="/backend/article">文章管理</a></li>
-                        <li class="<?php smartNavigateActive("CategoryController","") ?>"><a href="/backend/category">分类管理</a></li>
-                        <li class="<?php smartNavigateActive("TagController","") ?>"><a href="/backend/tag">标签管理</a></li>
-                    </ul>
-                </li>
-                <li class="menu-list <?php smartGroupActive("SystemSettingController") ?>"><a href=""><i class="fa fa-bolt"></i><span>系统设置</span></a>
-                    <ul class="sub-menu-list">
-                        <li class="<?php smartNavigateActive("SystemSettingController","") ?>"><a href="/backend/setting">基本设置</a></li>
-                    </ul>
-                </li>
+                <li class="<?php smartNavigateActive("IndexController","") ?>"><a href="/index"><i class="fa fa-home"></i> <span>系统概况</span></a></li>
+                <li class="<?php smartNavigateActive("UserController","") ?>"><a href="/user"><i class="fa fa-user"></i> <span>用户管理</span></a></li>
+                <li class="<?php smartNavigateActive("SettingController","") ?>"><a href="/setting"><i class="fa fa-bolt"></i> <span>系统设置</span></a></li>
             </ul>
             <!--sidebar nav end-->
 

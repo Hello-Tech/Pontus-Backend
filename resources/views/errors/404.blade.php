@@ -1,20 +1,20 @@
-@extends('layouts.defaultlayout')
+@extends('layouts.app')
 
 @section('header')
     <title>{{ postTitle() }}</title>
 @endsection
 
 @section('content')
-    <main id="main" class="main">
-        <div class="main-inner">
-            <div class="content-wrap">
-                <div id="content" class="content">
-                    <div id="posts" class="posts-expand" style="text-align: center">
-                        <p style="font-size: 40px;">SORRY, IT IS 404!</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="text-align: center;font-size: 30px;padding:50px;">
+                        <p>404~~</p>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
     <br/>
 @endsection
